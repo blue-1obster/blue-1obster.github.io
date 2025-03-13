@@ -12,19 +12,24 @@
     </style>
     <script>
         function startLobster() {
-            console.log("playing")
+            console.log("playing");
             const audio = new Audio("lobster.mp3");
             audio.volume = 1.0;
             audio.loop = true;
-            audio.play();
 
-            document.getElementById("lobster").style.display = "block";
-            document.getElementById("cat").style.display = "none";
-            document.getElementById("text").style.display = "none";
+            try {
+                audio.play().then(() => {
+                    document.getElementById("lobster").style.display = "block";
+                    document.getElementById("cat").style.display = "none";
+                    document.getElementById("text").style.display = "none";
+                });
+            } catch (error) {
+            }
         }
 
         document.addEventListener("click", startLobster);
         document.addEventListener("touchstart", startLobster);
+        document.addEventListener("touchend", startLobster);
     </script>
 </head>
 
