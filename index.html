@@ -12,7 +12,6 @@
     </style>
     <script>
         function startLobster() {
-            console.log("playing");
             const audio = new Audio("lobster.mp3");
             audio.volume = 1.0;
             audio.loop = true;
@@ -23,8 +22,7 @@
                     document.getElementById("cat").style.display = "none";
                     document.getElementById("text").style.display = "none";
                 });
-            } catch (error) {
-            }
+            } catch (error) { }
         }
 
         document.addEventListener("click", startLobster);
