@@ -12,17 +12,21 @@
     </style>
     <script>
         function startLobster() {
+            console.log("playing");
             const audio = new Audio("lobster.mp3");
             audio.volume = 1.0;
             audio.loop = true;
 
             try {
-                audio.play().then(() => {
-                    document.getElementById("lobster").style.display = "block";
-                    document.getElementById("cat").style.display = "none";
-                    document.getElementById("text").style.display = "none";
-                });
-            } catch (error) { }
+                for (let i = 0; i < 2; i++) {
+                    audio.play().then(() => {
+                        document.getElementById("lobster").style.display = "block";
+                        document.getElementById("cat").style.display = "none";
+                        document.getElementById("text").style.display = "none";
+                    });
+                }
+            } catch (error) {
+            }
         }
 
         document.addEventListener("click", startLobster);
