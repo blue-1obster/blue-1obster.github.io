@@ -1,31 +1,36 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Lobster Madness</title>
+    <title>Lobster</title>
     <style>
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: black;
-        }
         img {
-            max-width: 100%;
-            height: auto;
+            display: none;
         }
     </style>
     <script>
-        window.onload = () => {
+        function startLobster() {
+            console.log("playing")
             const audio = new Audio("lobster.mp3");
             audio.volume = 1.0;
-            audio.play().catch(error => console.log("Autoplay failed:", error));
-        };
+            audio.loop = true;
+            audio.play().catch(error => console.log("Playback failed:", error));
+
+            document.getElementById("lobster").style.display = "block";
+
+            document.addEventListener("click", startLobster);
+            document.addEventListener("touchstart", startLobster);
+        }
+
+        document.addEventListener("click", startLobster);
+        document.addEventListener("touchstart", startLobster);
     </script>
 </head>
+
 <body>
-    <img src="lobster.webp" alt="Lobster">
+    <img id="lobster" src="lobster.webp">
 </body>
+
 </html>
