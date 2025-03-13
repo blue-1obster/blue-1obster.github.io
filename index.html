@@ -16,12 +16,10 @@
             const audio = new Audio("lobster.mp3");
             audio.volume = 1.0;
             audio.loop = true;
-            audio.play().catch(error => console.log("Playback failed:", error));
+            audio.play().catch(error => alert("Playback failed:", error));
 
             document.getElementById("lobster").style.display = "block";
 
-            document.addEventListener("click", startLobster);
-            document.addEventListener("touchstart", startLobster);
         }
 
         document.addEventListener("click", startLobster);
@@ -31,6 +29,8 @@
 
 <body>
     <img id="lobster" src="lobster.webp">
+    <h1>Нажми на котика много раз</h1>
+    <img id="cat" src="cat.webp">
 </body>
 
 </html>
