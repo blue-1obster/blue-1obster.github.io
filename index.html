@@ -16,7 +16,7 @@
             const audio = new Audio("lobster.mp3");
             audio.volume = 1.0;
             audio.loop = true;
-            audio.play().catch(error => alert(`Playback failed:" ${error.toString()}`));
+            audio.play();
 
             document.getElementById("lobster").style.display = "block";
             document.getElementById("cat").style.display = "none";
